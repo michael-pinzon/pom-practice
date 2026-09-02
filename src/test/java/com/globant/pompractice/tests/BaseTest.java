@@ -2,13 +2,16 @@ package com.globant.pompractice.tests;
 
 import com.globant.pompractice.config.DriverFactory;
 import com.globant.pompractice.data.TestData;
+import com.globant.pompractice.listeners.TestProgressListener;
 import com.globant.pompractice.pages.InventoryPage;
 import com.globant.pompractice.pages.LoginPage;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 
+@Listeners(TestProgressListener.class)
 public abstract class BaseTest {
 
     protected WebDriver driver;
