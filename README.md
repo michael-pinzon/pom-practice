@@ -69,28 +69,20 @@ usuario regresa a la página de login.
 ## Demos grabadas
 
 Estas ejecuciones muestran los tres escenarios automatizados con el navegador
-visible, cursor animado, resaltado del elemento y el nombre de la prueba. Los
-videos MP4 también están versionados en [`docs/demo-videos/`](docs/demo-videos/).
-GitHub no reproduce etiquetas `<video>` locales dentro del README, así que cada
-demo incluye una vista previa animada que enlaza al video completo.
+visible, cursor animado, resaltado del elemento y el nombre de la prueba. Las
+tres demos se muestran directamente como GIFs animados.
 
 ### Compra de un producto
 
-[![Vista previa de la prueba de compra](docs/demo-videos/purchase-test.gif)](docs/demo-videos/purchase-test.mp4)
-
-[Abrir el video de compra](docs/demo-videos/purchase-test.mp4)
+![Vista previa de la prueba de compra](docs/demo-videos/purchase-test.gif)
 
 ### Eliminación de productos del carrito
 
-[![Vista previa de la eliminación del carrito](docs/demo-videos/cart-removal-test.gif)](docs/demo-videos/cart-removal-test.mp4)
-
-[Abrir el video de eliminación del carrito](docs/demo-videos/cart-removal-test.mp4)
+![Vista previa de la eliminación del carrito](docs/demo-videos/cart-removal-test.gif)
 
 ### Cierre de sesión
 
-[![Vista previa del cierre de sesión](docs/demo-videos/logout-test.gif)](docs/demo-videos/logout-test.mp4)
-
-[Abrir el video de cierre de sesión](docs/demo-videos/logout-test.mp4)
+![Vista previa del cierre de sesión](docs/demo-videos/logout-test.gif)
 
 ## Decisiones de diseño
 
