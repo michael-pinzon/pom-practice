@@ -20,7 +20,7 @@ public class CheckoutOverviewPage extends BasePage {
     }
 
     public CheckoutCompletePage finishPurchase() {
-        click(finishButton);
+        clickWithJavaScript(finishButton);
         return new CheckoutCompletePage(driver);
     }
 }

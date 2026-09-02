@@ -37,7 +37,7 @@ public class CartPage extends BasePage {
     public CartPage removeAllItems() {
         while (!removeButtons.isEmpty()) {
             int expectedRemainingItems = itemCount() - 1;
-            click(removeButtons.get(0));
+            clickWithJavaScript(removeButtons.get(0));
             wait.until(ExpectedConditions.numberOfElementsToBe(CART_ITEMS, expectedRemainingItems));
         }
         return this;
@@ -48,7 +48,7 @@ public class CartPage extends BasePage {
     }
 
     public CheckoutInformationPage checkout() {
-        click(checkoutButton);
+        clickWithJavaScript(checkoutButton);
         return new CheckoutInformationPage(driver);
     }
 }

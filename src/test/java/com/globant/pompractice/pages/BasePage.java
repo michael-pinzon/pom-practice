@@ -3,6 +3,7 @@ package com.globant.pompractice.pages;
 import java.time.Duration;
 import java.util.Objects;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,10 +28,25 @@ public abstract class BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(element)).click();
     }
 
+    protected void clickWithJavaScript(WebElement element) {
+        WebElement clickableElement = wait.until(ExpectedConditions.elementToBeClickable(element));
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].scrollIntoView({block: 'center'}); arguments[0].click();",
+                clickableElement);
+    }
+
     protected void type(WebElement element, String value) {
         WebElement visibleElement = wait.until(ExpectedConditions.visibilityOf(element));
-        visibleElement.clear();
-        visibleElement.sendKeys(value);
+        Objects.requireNonNull(value, "value must not be null");
+        ((JavascriptExecutor) driver).executeScript(
+                "const element = arguments[0];"
+                        + "const valueSetter = Object.getOwnPropertyDescriptor("
+                        + "HTMLInputElement.prototype, 'value').set;"
+                        + "valueSetter.call(element, arguments[1]);"
+                        + "element.dispatchEvent(new Event('input', {bubbles: true}));"
+                        + "element.dispatchEvent(new Event('change', {bubbles: true}));",
+                visibleElement,
+                value);
     }
 
     protected String readText(WebElement element) {

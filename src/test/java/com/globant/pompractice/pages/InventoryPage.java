@@ -41,7 +41,7 @@ public class InventoryPage extends BasePage {
     public InventoryPage addRandomProduct() {
         ensureProductsAvailable();
         int randomIndex = ThreadLocalRandom.current().nextInt(productActionButtons.size());
-        click(productActionButtons.get(randomIndex));
+        clickWithJavaScript(productActionButtons.get(randomIndex));
         return this;
     }
 
@@ -55,18 +55,18 @@ public class InventoryPage extends BasePage {
 
         productIndexes.stream()
                 .limit(quantity)
-                .forEach(index -> click(productActionButtons.get(index)));
+                .forEach(index -> clickWithJavaScript(productActionButtons.get(index)));
         return this;
     }
 
     public CartPage openCart() {
-        click(shoppingCartLink);
+        clickWithJavaScript(shoppingCartLink);
         return new CartPage(driver);
     }
 
     public LoginPage logout() {
-        click(menuButton);
-        click(logoutLink);
+        clickWithJavaScript(menuButton);
+        clickWithJavaScript(logoutLink);
         return new LoginPage(driver);
     }
 
