@@ -1,5 +1,8 @@
 package com.globant.pompractice.config;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -19,7 +22,20 @@ public final class DriverFactory {
         if (TestConfig.headless()) {
             options.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage");
         }
-        options.addArguments("--window-size=1920,1080", "--disable-gpu");
+        String windowSize = TestConfig.demo() ? "1440,900" : "1920,1080";
+        options.addArguments(
+                "--window-size=" + windowSize,
+                "--disable-gpu",
+                "--disable-notifications",
+                "--disable-save-password-bubble",
+                "--disable-password-generation",
+                "--disable-features=PasswordLeakDetection,PasswordCheck,PasswordManagerOnboarding");
+
+        Map<String, Object> preferences = new HashMap<>();
+        preferences.put("credentials_enable_service", false);
+        preferences.put("profile.password_manager_enabled", false);
+        preferences.put("profile.password_manager_leak_detection", false);
+        options.setExperimentalOption("prefs", preferences);
 
         return new ChromeDriver(options);
     }

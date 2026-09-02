@@ -66,6 +66,30 @@ tres elementos, elimina todos mediante `CartPage` y valida que el carrito quede 
 `LogoutTest` inicia sesión, abre el menú lateral, cierra la sesión y comprueba que el
 usuario regresa a la página de login.
 
+## Demos grabadas
+
+Estas ejecuciones muestran los tres escenarios automatizados con el navegador
+visible, cursor animado, resaltado del elemento y el nombre de la prueba. Los
+videos también están versionados en [`docs/demo-videos/`](docs/demo-videos/).
+
+### Compra de un producto
+
+<video controls preload="metadata" width="720" src="docs/demo-videos/purchase-test.mp4"></video>
+
+[Abrir el video de compra](docs/demo-videos/purchase-test.mp4)
+
+### Eliminación de productos del carrito
+
+<video controls preload="metadata" width="720" src="docs/demo-videos/cart-removal-test.mp4"></video>
+
+[Abrir el video de eliminación del carrito](docs/demo-videos/cart-removal-test.mp4)
+
+### Cierre de sesión
+
+<video controls preload="metadata" width="720" src="docs/demo-videos/logout-test.mp4"></video>
+
+[Abrir el video de cierre de sesión](docs/demo-videos/logout-test.mp4)
+
 ## Decisiones de diseño
 
 - Los localizadores son privados y se inicializan con `@FindBy` mediante Page Factory.

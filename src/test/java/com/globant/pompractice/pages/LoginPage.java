@@ -25,6 +25,7 @@ public class LoginPage extends BasePage {
         driver.get(TestConfig.baseUrl());
         wait.until(driver -> driver.getCurrentUrl().equals(TestConfig.baseUrl()));
         wait.until(org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf(usernameField));
+        demoVisualizer.showTestTitle();
         return this;
     }
 
