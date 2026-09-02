@@ -5,6 +5,11 @@ target/
 .kotlin
 
 ### IntelliJ IDEA ###
+.idea/workspace.xml
+.idea/httpRequests/
+.idea/shelf/
+.idea/dataSources/
+.idea/dataSources.local.xml
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
@@ -12,6 +17,7 @@ target/
 *.iws
 *.iml
 *.ipr
+out/
 
 ### Eclipse ###
 .apt_generated
