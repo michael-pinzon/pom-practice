@@ -32,7 +32,7 @@ public class CheckoutInformationPage extends BasePage {
         type(firstNameField, firstName);
         type(lastNameField, lastName);
         type(postalCodeField, postalCode);
-        click(continueButton);
+        clickWithJavaScript(continueButton);
         return new CheckoutOverviewPage(driver);
     }
 }
