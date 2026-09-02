@@ -104,6 +104,21 @@ mvn clean test '-Dheadless=false'
 También se pueden sobrescribir la URL y el navegador con `-DbaseUrl` y `-Dbrowser`.
 La implementación actual valida `chrome` como navegador soportado.
 
+Durante la ejecución, `TestProgressListener` muestra el avance directamente en la
+terminal, incluso cuando Chrome se ejecuta en modo headless:
+
+```text
+[PROGRESS] Starting TestNG suite (3 tests)
+[PROGRESS] [>                   ] 1/3 START PurchaseTest.shouldPurchaseRandomProduct
+[PROGRESS] [=======>            ] 1/3 PASS PurchaseTest.shouldPurchaseRandomProduct
+[PROGRESS] [=======>            ] 2/3 START CartRemovalTest.shouldRemoveThreeProductsAndLeaveCartEmpty
+...
+[PROGRESS] [====================] Suite complete: 3/3 tests finished
+```
+
+No se agrega una espera artificial entre pruebas: el mensaje `START` marca el inicio
+de cada escenario y `PASS`, `FAIL`, `SKIP` o `RETRY` informa su resultado.
+
 ## Credenciales de demostración
 
 El ejercicio utiliza las credenciales públicas de SauceDemo:
